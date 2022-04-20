@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from 'next/link'
 const Bear = ({ avatar_url, login }) => {
 
   const [name, setName] = useState("");
@@ -7,11 +8,11 @@ const Bear = ({ avatar_url, login }) => {
   const [tasks, setTasks] = useState([]);
   const [idEdit, setidEdit] = useState(0);
 
-  useEffect( async () => {
+  useEffect(async () => {
     let ts = await getBear();
     console.log(ts)
     setTasks(ts)
-    }, [] )
+  }, [])
 
   const addTask = () => {
     console.log("add");
@@ -88,7 +89,16 @@ const Bear = ({ avatar_url, login }) => {
         <input className="text-xl text-[#BA4A00] w-1/3 bg-[#EEEEEE] rounded-lg pl-4 mt-2 mb-2 font-bold outline-[#BA4A00] font-display" type="text" name="task" onChange={(e) => setName(e.target.value)} />
         <input className="text-xl text-[#BA4A00] w-1/3 bg-[#EEEEEE] rounded-lg pl-4 mt-2 mb-2 font-bold outline-[#BA4A00] font-display" type="number" name="task" onChange={(e) => setWeight(e.target.value)} />
         <input className="text-xl text-[#BA4A00] w-1/3 bg-[#EEEEEE] rounded-lg pl-4 mt-2 mb-2 font-bold outline-[#BA4A00] font-display" type="text" name="task" onChange={(e) => setPicture(e.target.value)} />
-        <button className="text-2xl w-1/3 bg-[#BA4A00] font-bold text-[#FFC300] hover:text-[#DAF7A6] dark:md:hover:bg-[#C70039] rounded-lg mt-2 mb-2 font-display" onClick={addTask}>Add</button>
+        <div className="flex flex-row mt-2 mb-2">
+          <button className="text-2xl w-40 bg-[#BA4A00] font-bold text-[#FFC300] hover:text-[#DAF7A6] dark:md:hover:bg-[#C70039] rounded-lg mt-2 mb-2 mr-2 font-display" onClick={addTask}>Add</button>
+          <button className="text-2xl w-40 bg-[#BA4A00] font-bold text-[#FFC300] hover:text-[#DAF7A6] dark:md:hover:bg-[#C70039] rounded-lg mt-2 mb-2 ml-2 font-display">
+            <Link href="/">
+              <a>Back to home</a>
+            </Link>
+          </button>
+        </div>
+
+
       </div>
       <ul className="flex flex-wrap mb-8">{renderTask()}</ul>
     </div>
