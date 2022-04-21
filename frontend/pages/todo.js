@@ -84,7 +84,7 @@ const Bear = ({ avatar_url, login }) => {
   };
   return (
     <div className="bg-lime-300 flex flex-col items-center ">
-      <h1 className="m-2 text-[#BA4A00] text-8xl font-bold italic uppercase font-display">Kitty !</h1>
+      <h1 className="m-2 text-[#BA4A00] text-8xl font-bold italic uppercase font-display">Edit Kitty !</h1>
       <div className="flex flex-col w-1/3 justify-around items-center mt-2 mb-2 ">
         <input className="text-xl text-[#BA4A00] w-1/3 bg-[#EEEEEE] rounded-lg pl-4 mt-2 mb-2 font-bold outline-[#BA4A00] font-display" type="text" name="task" onChange={(e) => setName(e.target.value)} />
         <input className="text-xl text-[#BA4A00] w-1/3 bg-[#EEEEEE] rounded-lg pl-4 mt-2 mb-2 font-bold outline-[#BA4A00] font-display" type="number" name="task" onChange={(e) => setWeight(e.target.value)} />

@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+#bgm {
+  background-image: url(https://i.pinimg.com/564x/0b/b6/62/0bb66289c64cef89eb55a0abd27ba0f5.jpg);
+}
+
 * {
   box-sizing: border-box;
 }
